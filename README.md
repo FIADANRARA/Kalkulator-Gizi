@@ -1,12 +1,19 @@
-# GIZI ANTI RIBET: Kalkulator AKG Lagrange
+# 🥗GIZI ANTI RIBET: Kalkulator AKG Lagrange
 
-## Selamat Datang di NutriMatch!
+## Selamat Datang di NutriMatch !
 
-Halo teman-teman pelajar dan pejuang hidup sehat!
+Halo NutriPeeps si pelajar dan pejuang hidup sehat!
+<div align="center">
 
-Selamat datang di **GIZI ANTI RIBET** yaa, kalkulator keren yang bisa ngitungin Angka Kecukupan Gizi (AKG) kamu dengan  gampang dan akurat.
+Kenalin aku **NUTRI**, maskot ceria dari NutriMatch! 🥑✨
 
-Disini, kami ingin **Memberikan estimasi kebutuhan gizi harian yang presisi dan bukan hanya perkiraan kasar.**
+Aku ada di sini buat bantu kalian cek kebutuhan gizi harian dengan cara yang:
+- gampang ✔  
+- cepat ✔  
+- akurat banget ✔  
+
+Yuk, bareng aku kita hitung AKG kamu pake metode keren: **Interpolasi Lagrange!**  
+Ayo hidup sehat tanpa ribet!
 
 ### 🖼 Tampilan Aplikasi
 <img width="1250" height="541" alt="image" src="https://github.com/user-attachments/assets/a1cbeb30-656c-4c69-8019-5ae3fbecbc1a" />
