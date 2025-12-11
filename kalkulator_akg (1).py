@@ -461,9 +461,6 @@ def get_saran_makanan(Jenis_Gizi_Key, hasil_estimasi, Unit_Gizi, BB_Awal, BB_Tar
     saran.append(f"**Strategi Utama Energi:** {Tujuan_Goal}")
     saran.append("---")
     
-    # --- BAGIAN 2: STRATEGI UTAMA BERDASARKAN TUJUAN BB ---
-        saran.append(f"### Strategi Gizi Khusus ({Jenis_Gizi_Key})")
-    
     # TINGKATKAN/JAGA
     tingkatkan_jaga = saran_data.get(Tujuan_Key, {}).get(
         'Tingkatkan/Jaga',
@@ -1062,6 +1059,7 @@ with tab_metode:
     Meskipun metode ini sangat akurat di antara titik-titik data (interpolasi), metode ini mungkin kurang akurat 
     jika digunakan untuk memprediksi di luar rentang data acuan (ekstrapolasi).
     """)
+
 
 
 
