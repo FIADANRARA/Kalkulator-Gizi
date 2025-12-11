@@ -4,7 +4,8 @@
 
 Halo NutriPeeps si pelajar dan pejuang hidup sehat!
 <div align="center">
-(maskot_gizi_animated.gif)
+[(maskot_gizi_animated.gif)](https://raw.githubusercontent.com/FIADANRARA/Project-Metnum/main/maskot_gizi_animated.gif
+)
 </div>
 
 Kenalin aku **Gizimo**, maskot ceria dari NutriMatch! 🥑✨
