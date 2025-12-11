@@ -333,7 +333,25 @@ st.markdown("""
         color: #000000; /* Teks Hitam */
         border: 2px solid #00BFA6;
     }
-    
+        /* HIGHLIGHT JUDUL BAGIAN SARAN */
+    .saran-section {
+        margin-top: 18px;
+        margin-bottom: 6px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 800;
+        font-size: 0.95rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .saran-section-up {
+        color: #00BFA6;  /* hijau naik BB / hal positif */
+    }
+
+    .saran-section-down {
+        color: #FF6B6B;  /* merah lembut untuk yang dikurangi */
+    }
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -438,24 +456,40 @@ def get_saran_makanan(Jenis_Gizi_Key, hasil_estimasi, Unit_Gizi, BB_Awal, BB_Tar
         Tujuan_Text = f"NutriPeeps bertujuan **MEMPERTAHANKAN** BB di sekitar {BB_Target:.1f} kg."
         
     # --- BAGIAN 1: TARGET GIZI UTAMA & TUJUAN BB ---
-    saran.append(f"### 🎯 Kebutuhan Harian **{Jenis_Gizi_Key}** (untuk BB Target {BB_Target:.1f} kg): {hasil_estimasi:.0f} {Unit_Gizi}")
+    saran.append(f"###  Kebutuhan Harian **{Jenis_Gizi_Key}** (untuk BB Target {BB_Target:.1f} kg): {hasil_estimasi:.0f} {Unit_Gizi}")
     saran.append(f"**Tujuan Besar NutriPeeps:** {Tujuan_Text}")
     saran.append(f"**Strategi Utama Energi:** {Tujuan_Goal}")
     saran.append("---")
     
     # --- BAGIAN 2: STRATEGI UTAMA BERDASARKAN TUJUAN BB ---
-    saran.append(f"### Strategi Gizi Khusus ({Jenis_Gizi_Key})")
+        saran.append(f"### Strategi Gizi Khusus ({Jenis_Gizi_Key})")
     
     # TINGKATKAN/JAGA
-    tingkatkan_jaga = saran_data.get(Tujuan_Key, {}).get('Tingkatkan/Jaga', "Informasi strategi peningkatan belum tersedia.")
-    saran.append(f"**AYO TINGKATKAN BAGIAN DI BAWAH INI!:**")
+    tingkatkan_jaga = saran_data.get(Tujuan_Key, {}).get(
+        'Tingkatkan/Jaga',
+        "Informasi strategi peningkatan belum tersedia."
+    )
+    saran.append(
+        "<div class='saran-section saran-section-up'>"
+        "AYO TINGKATKAN BAGIAN DI BAWAH INI! "
+        "</div>"
+    )
+
     # Tampilkan sebagai list yang mudah dibaca
     for item in tingkatkan_jaga.split(';'):
         saran.append(f"* {item.strip()}")
     
     # KURANGI/BATASI
-    kurangi_batasi = saran_data.get(Tujuan_Key, {}).get('Kurangi/Batasi', "Informasi strategi pembatasan belum tersedia.")
-    saran.append(f"**KURANGI BAGIAN INI YA!:**")
+    kurangi_batasi = saran_data.get(Tujuan_Key, {}).get(
+        'Kurangi/Batasi',
+        "Informasi strategi pembatasan belum tersedia."
+    )
+    saran.append(
+        "<div class='saran-section saran-section-down'>"
+        "KURANGI BAGIAN INI YA! ⬇️"
+        "</div>"
+    )
+
     for item in kurangi_batasi.split(';'):
         saran.append(f"* {item.strip()}")
     
@@ -875,7 +909,7 @@ with tab_hasil:
             st.markdown("---")
             
             # Tampilkan Hasil Utama Gizi Lagrange
-            st.subheader(f"✅ HASIL ESTIMASI AKG: {Deskripsi_Gizi} ")
+            st.subheader(f"HASIL ESTIMASI AKG: {Deskripsi_Gizi} ")
             
             # Tampilkan hasil estimasi dalam kotak SUCCESS 
             st.success(f"Perkiraan kebutuhan **{Deskripsi_Gizi}** harian NutriPeeps untuk mencapai BB Target **{BB_Target_Val:.1f} kg** adalah **{hasil_estimasi:.2f} {Unit_Gizi}**.")
@@ -891,10 +925,10 @@ with tab_hasil:
                 BB_Awal_Val, 
                 BB_Target_Val, 
             )
-            
+
             for saran in saran_list:
-                st.markdown(saran)
-                
+                st.markdown(saran, unsafe_allow_html=True)
+
             st.markdown("---")
 
             # Analisis Data dan Visualisasi (Plot menggunakan BB TARGET)
@@ -1028,6 +1062,7 @@ with tab_metode:
     Meskipun metode ini sangat akurat di antara titik-titik data (interpolasi), metode ini mungkin kurang akurat 
     jika digunakan untuk memprediksi di luar rentang data acuan (ekstrapolasi).
     """)
+
 
 
 
