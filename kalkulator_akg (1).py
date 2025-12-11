@@ -6,6 +6,45 @@ import streamlit as st
 # --- CSS KUSTOM & TEMA (TETAP SAMA) ---
 st.markdown("""
 <style>
+    /* SECTION HEADER KECIL (UNTUK SETIAP TAB) */
+    .section-header {
+        margin-top: 10px;
+        margin-bottom: 18px;
+        padding: 12px 18px;
+        border-radius: 16px;
+        background: radial-gradient(circle at top left, #284b8f 0%, #0B2447 55%, #020617 100%);
+        border: 1px solid rgba(165, 215, 232, 0.5);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.55);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .section-header-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 14px;
+        background: rgba(15, 23, 42, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+    }
+
+    .section-header-title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #E5F5FF;
+        letter-spacing: 0.02em;
+    }
+
+    .section-header-sub {
+        font-size: 0.9rem;
+        color: #D1E9FF;
+        margin-top: 2px;
+    }
+
     /* TAB STRIP UPGRADE: pill + glow */
     .stTabs [role="tablist"] {
         gap: 0.6rem;
@@ -653,7 +692,20 @@ tab_input, tab_hasil, tab_metode = st.tabs(["1️⃣ Input Parameter", "2️⃣ 
 
 # --- TAB 1: Input Parameter ---
 with tab_input:
-    st.header("Masukkan Profil dan Kebutuhan")
+    with tab_input:
+-    st.header("Masukkan Profil dan Kebutuhan")
++    st.markdown("""
++    <div class="section-header">
++        <div class="section-header-icon">🧩</div>
++        <div>
++            <div class="section-header-title">Masukkan Profil dan Kebutuhan</div>
++            <div class="section-header-sub">
++                Isi dulu data dasar NutriPeeps supaya perhitungannya pas sasaran.
++            </div>
++        </div>
++    </div>
++    """, unsafe_allow_html=True)
+
     
     col_gizi, col_bb_awal, col_tb = st.columns(3)
     Kelompok_options = list(Tabel_Kebutuhan_Gizi_Rujukan.keys())
@@ -733,6 +785,23 @@ with tab_input:
         )
         st.balloons()
 
+with tab_hasil:
+-    if st.session_state['hitung']:
++    st.markdown("""
++    <div class="section-header">
++        <div class="section-header-icon">📊</div>
++        <div>
++            <div class="section-header-title">Hasil Estimasi & Visualisasi</div>
++            <div class="section-header-sub">
++                Lihat ringkasan status gizi, AKG target, dan kurva Lagrange NutriPeeps.
++            </div>
++        </div>
++    </div>
++    """, unsafe_allow_html=True)
++
++    if st.session_state['hitung']:
+        try:
+            ...
 
 
 # --- TAB 2: Logika Perhitungan & Output Utama ---
@@ -940,6 +1009,22 @@ with tab_metode:
     st.markdown("""
     **Penting:** Meskipun metode ini sangat akurat di antara titik-titik data (interpolasi), metode ini mungkin kurang akurat jika digunakan untuk memprediksi di luar rentang data acuan (ekstrapolasi).
     """)
+
+with tab_metode:
+-    st.header("Metode Numerik: Interpolasi Polinomial Lagrange")
++    st.markdown("""
++    <div class="section-header">
++        <div class="section-header-icon">🧠</div>
++        <div>
++            <div class="section-header-title">Tentang Metode</div>
++            <div class="section-header-sub">
++                Ngulik sedikit matematika di balik NutriMatch biar makin paham dan yakin sama angkanya.
++            </div>
++        </div>
++    </div>
++    """, unsafe_allow_html=True)
++
++    st.subheader("Metode Numerik: Interpolasi Polinomial Lagrange")
 
 
 
