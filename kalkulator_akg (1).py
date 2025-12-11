@@ -692,7 +692,6 @@ tab_input, tab_hasil, tab_metode = st.tabs(["1️⃣ Input Parameter", "2️⃣ 
 
 # --- TAB 1: Input Parameter ---
 with tab_input:
-    with tab_input:
 
 +    st.markdown("""
 +    <div class="section-header">
@@ -1027,6 +1026,7 @@ with tab_metode:
 +    """, unsafe_allow_html=True)
 +
 +    st.subheader("Metode Numerik: Interpolasi Polinomial Lagrange")
+
 
 
 
