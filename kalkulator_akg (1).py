@@ -691,7 +691,6 @@ if 'tb_val' not in st.session_state:
 tab_input, tab_hasil, tab_metode = st.tabs(["1️⃣ Input Parameter", "2️⃣ Hasil Estimasi & Visualisasi", "3️⃣ Tentang Metode"])
 
 # --- TAB 1: Input Parameter ---
-with tab_input:
 
 +    st.markdown("""
 +    <div class="section-header">
@@ -1026,6 +1025,7 @@ with tab_metode:
 +    """, unsafe_allow_html=True)
 +
 +    st.subheader("Metode Numerik: Interpolasi Polinomial Lagrange")
+
 
 
 
