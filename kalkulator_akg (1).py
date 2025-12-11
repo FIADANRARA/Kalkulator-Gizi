@@ -6,6 +6,43 @@ import streamlit as st
 # --- CSS KUSTOM & TEMA (TETAP SAMA) ---
 st.markdown("""
 <style>
+    /* TAB STRIP UPGRADE: pill + glow */
+    .stTabs [role="tablist"] {
+        gap: 0.6rem;
+        border-radius: 999px;
+        padding: 4px 4px;
+        background: rgba(8, 24, 68, 0.9);
+        border: 1px solid rgba(165, 215, 232, 0.45);
+        margin-bottom: 20px;
+    }
+
+    .stTabs [data-baseweb="tab"] {
+        background: transparent;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        padding: 6px 14px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #E5F5FF !important;
+        transition: all 0.15s ease-out;
+    }
+
+    .stTabs [data-baseweb="tab"]:hover {
+        background: rgba(26, 55, 109, 0.9);
+        border-color: rgba(165, 215, 232, 0.4);
+    }
+
+    .stTabs [aria-selected="true"] {
+        background: linear-gradient(120deg, #FFB300, #A5D7E8);
+        color: #0B2447 !important;
+        border-color: transparent !important;
+        box-shadow: 0 0 0 1px rgba(10, 22, 50, 0.4), 0 8px 16px rgba(0,0,0,0.6);
+        transform: translateY(-1px);
+    }
+
+    .stTabs [aria-selected="true"]::after {
+        background: transparent !important;  /* hapus garis bawah default */
+    }
        /* FONT KHUSUS UNTUK JUDUL */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
 
@@ -269,8 +306,8 @@ st.markdown("""
             NutriMatch <span class="hero-text-highlight">AKG Lagrange</span>
         </div>
         <div class="hero-subtitle">
-            Kebutuhan gizi harian NutriPeeps dihitung cerdas pakai interpolasi polinomial Lagrange —
-            rapi, visual, dan gampang dipahami.
+            Kebutuhan gizi harian NutriPeeps yang dihitung pakai interpolasi polinomial Lagrange, 
+            Gizimo jamin bakal mudah dipahami, ayo coba!.
         </div>
     </div>
     <div class="hero-pill">
@@ -903,6 +940,7 @@ with tab_metode:
     st.markdown("""
     **Penting:** Meskipun metode ini sangat akurat di antara titik-titik data (interpolasi), metode ini mungkin kurang akurat jika digunakan untuk memprediksi di luar rentang data acuan (ekstrapolasi).
     """)
+
 
 
 
