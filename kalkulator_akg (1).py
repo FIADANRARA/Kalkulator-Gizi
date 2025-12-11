@@ -966,28 +966,46 @@ with tab_hasil:
     else:
         st.warning("Tekan tombol **'HITUNG ESTIMASI GIZI SEKARANG 🎯'** di tab **Input Parameter** untuk memulai analisis.")
 
-# --- TAB 3: Tentang Metode (Tidak Berubah) ---
+# --- TAB 3: Tentang Metode ---
 with tab_metode:
-    st.header("Metode Numerik: Interpolasi Polinomial Lagrange")
-st.subheader("Metode Numerik: Interpolasi Polinomial Lagrange")
+    st.markdown("""
+    <div class="section-header">
+        <div class="section-header-icon">🧠</div>
+        <div>
+            <div class="section-header-title">Tentang Metode</div>
+            <div class="section-header-sub">
+                Ngulik sedikit matematika di balik NutriMatch biar makin paham dan yakin sama angkanya.
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
-    st.markdown("Aplikasi ini menggunakan metode **Interpolasi Polinomial Lagrange** untuk mengestimasi nilai Angka Kecukupan Gizi (AKG) pada Berat Badan (BB) yang tidak tercantum langsung dalam tabel rujukan AKG resmi.")
+    st.subheader("Metode Numerik: Interpolasi Polinomial Lagrange")
+    st.markdown(
+        "Aplikasi ini menggunakan metode **Interpolasi Polinomial Lagrange** "
+        "untuk mengestimasi nilai Angka Kecukupan Gizi (AKG) pada Berat Badan "
+        "(BB) yang tidak tercantum langsung dalam tabel rujukan."
+    )
 
     st.subheader("Konsep Dasar")
     st.markdown("""
-    * **Interpolasi** adalah metode untuk membangun fungsi baru dari sekumpulan titik data yang diskrit. Dalam kasus ini, kita membuat fungsi yang menghubungkan kebutuhan gizi (Y) dengan Berat Badan (X).
-    * **Polinomial Lagrange** adalah salah satu metode interpolasi yang menghasilkan polinomial unik berderajat $n-1$ yang melewati semua $n$ titik data yang diberikan.
+    * **Interpolasi** adalah metode untuk membangun fungsi baru dari sekumpulan titik data yang diskrit. 
+      Dalam kasus ini, kita membuat fungsi yang menghubungkan kebutuhan gizi (Y) dengan Berat Badan (X).
+    * **Polinomial Lagrange** adalah salah satu metode interpolasi yang menghasilkan polinomial unik 
+      berderajat $n-1$ yang melewati semua $n$ titik data yang diberikan.
     """)
-    
+
     st.subheader("Rumus Polinomial Lagrange")
-    st.markdown("Untuk $n$ titik data $(x_0, y_0), (x_1, y_1), \dots, (x_{n-1}, y_{n-1})$, Polinomial Lagrange $P(x)$ didefinisikan sebagai:")
-    
+    st.markdown(
+        "Untuk $n$ titik data $(x_0, y_0), (x_1, y_1), \\dots, (x_{n-1}, y_{n-1})$, "
+        "Polinomial Lagrange $P(x)$ didefinisikan sebagai:"
+    )
+
     st.latex(r"P(x) = \sum_{j=0}^{n-1} y_j L_j(x)")
-    
+
     st.markdown("Di mana $L_j(x)$ adalah **Basis Polinomial Lagrange**:")
-    
     st.latex(r"L_j(x) = \prod_{i=0, i \neq j}^{n-1} \frac{x - x_i}{x_j - x_i}")
-    
+
     st.markdown("""
     Dalam konteks aplikasi ini:
     * $x$ adalah **Berat Badan Target** (`BB_Target_Val`).
@@ -997,14 +1015,18 @@ st.subheader("Metode Numerik: Interpolasi Polinomial Lagrange")
 
     st.subheader("Mengapa menggunakan Lagrange?")
     st.markdown("""
-    1. **Akurasi Titik Rujukan:** Polinomial Lagrange menjamin akurasi penuh pada titik-titik data rujukan (kurva pasti melewati titik-titik tersebut).
+    1. **Akurasi Titik Rujukan:** Polinomial Lagrange menjamin akurasi penuh pada titik-titik data rujukan 
+       (kurva pasti melewati titik-titik tersebut).
     2. **Solusi Unik:** Untuk set data yang diberikan, Polinomial Lagrange memberikan solusi polinomial unik.
-    3. **Kesinambungan Data Gizi:** Karena kebutuhan gizi sering kali berhubungan secara non-linear dengan berat badan, interpolasi polinomial memberikan estimasi yang lebih halus dan logis dibandingkan interpolasi linier.
-    """) 
-    
+    3. **Kesinambungan Data Gizi:** Karena kebutuhan gizi sering kali berhubungan secara non-linear dengan 
+       berat badan, interpolasi polinomial memberikan estimasi yang lebih halus dan logis dibandingkan interpolasi linier.
+    """)
+
     st.markdown("---")
     st.markdown("""
-    **Penting:** Meskipun metode ini sangat akurat di antara titik-titik data (interpolasi), metode ini mungkin kurang akurat jika digunakan untuk memprediksi di luar rentang data acuan (ekstrapolasi).
+    **Penting:**  
+    Meskipun metode ini sangat akurat di antara titik-titik data (interpolasi), metode ini mungkin kurang akurat 
+    jika digunakan untuk memprediksi di luar rentang data acuan (ekstrapolasi).
     """)
 
 with tab_metode:
@@ -1022,6 +1044,7 @@ with tab_metode:
 +    """, unsafe_allow_html=True)
 +
 +    st.subheader("Metode Numerik: Interpolasi Polinomial Lagrange")
+
 
 
 
