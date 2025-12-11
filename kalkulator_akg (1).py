@@ -36,6 +36,31 @@ st.markdown("""
         color: #F0F0F0; /* Warna teks utama terang */
         font-family: 'Georgia', serif; 
     }
+    .pulse-info {
+    margin-top: 10px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background-color: #19376D;
+    border: 1px solid #FFB300;
+    color: #FFECAA;
+    font-weight: 600;
+    animation: pulseGlow 1.2s ease-out 0s 2; /* animasi 2x */
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 179, 0, 0.8);
+        transform: scale(1);
+    }
+    70% {
+        box-shadow: 0 0 18px 10px rgba(255, 179, 0, 0);
+        transform: scale(1.02);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 179, 0, 0);
+        transform: scale(1);
+    }
+}
 
     /* 2. Latar Belakang Sidebar & Containers */
     .st-emotion-cache-1ldfqsx, .st-emotion-cache-h44nrf, .st-emotion-cache-12fm521 { 
@@ -789,6 +814,7 @@ with tab_metode:
     st.markdown("""
     **Penting:** Meskipun metode ini sangat akurat di antara titik-titik data (interpolasi), metode ini mungkin kurang akurat jika digunakan untuk memprediksi di luar rentang data acuan (ekstrapolasi).
     """)
+
 
 
 
