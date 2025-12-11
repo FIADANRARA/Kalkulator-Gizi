@@ -1029,20 +1029,7 @@ with tab_metode:
     jika digunakan untuk memprediksi di luar rentang data acuan (ekstrapolasi).
     """)
 
-with tab_metode:
-    st.header("Metode Numerik: Interpolasi Polinomial Lagrange")
-+    st.markdown("""
-+    <div class="section-header">
-+        <div class="section-header-icon">🧠</div>
-+        <div>
-+            <div class="section-header-title">Tentang Metode</div>
-+            <div class="section-header-sub">
-+                Ngulik sedikit matematika di balik NutriMatch biar makin paham dan yakin sama angkanya.
-+            </div>
-+        </div>
-+    </div>
-+    """, unsafe_allow_html=True)
-+    st.subheader("Metode Numerik: Interpolasi Polinomial Lagrange")
+
 
 
 
