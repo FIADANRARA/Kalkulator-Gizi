@@ -789,26 +789,18 @@ with tab_input:
             st.balloons()
 
 with tab_hasil:
-if st.session_state['hitung']:
-+    st.markdown("""
-+    <div class="section-header">
-+        <div class="section-header-icon">📊</div>
-+        <div>
-+            <div class="section-header-title">Hasil Estimasi & Visualisasi</div>
-+            <div class="section-header-sub">
-+                Lihat ringkasan status gizi, AKG target, dan kurva Lagrange NutriPeeps.
-+            </div>
-+        </div>
-+    </div>
-+    """, unsafe_allow_html=True)
-+
-+    if st.session_state['hitung']:
-        try:
-            ...
-
-
-# --- TAB 2: Logika Perhitungan & Output Utama ---
-with tab_hasil:
+    st.markdown("""
+    <div class="section-header">
+        <div class="section-header-icon">📊</div>
+        <div>
+            <div class="section-header-title">Hasil Estimasi & Visualisasi</div>
+            <div class="section-header-sub">
+                Lihat ringkasan status gizi, AKG target, dan kurva Lagrange NutriPeeps.
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
     if st.session_state['hitung']:
         try:
             # Ambil nilai dari session state
@@ -1030,6 +1022,7 @@ with tab_metode:
 +    """, unsafe_allow_html=True)
 +
 +    st.subheader("Metode Numerik: Interpolasi Polinomial Lagrange")
+
 
 
 
