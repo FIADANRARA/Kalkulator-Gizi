@@ -1042,8 +1042,8 @@ with tab_metode:
 +        </div>
 +    </div>
 +    """, unsafe_allow_html=True)
-+
 +    st.subheader("Metode Numerik: Interpolasi Polinomial Lagrange")
+
 
 
 
