@@ -789,7 +789,7 @@ with tab_input:
             st.balloons()
 
 with tab_hasil:
--    if st.session_state['hitung']:
+if st.session_state['hitung']:
 +    st.markdown("""
 +    <div class="section-header">
 +        <div class="section-header-icon">📊</div>
@@ -1030,6 +1030,7 @@ with tab_metode:
 +    """, unsafe_allow_html=True)
 +
 +    st.subheader("Metode Numerik: Interpolasi Polinomial Lagrange")
+
 
 
 
