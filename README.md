@@ -3,9 +3,9 @@
 ## Selamat Datang di NutriMatch !
 
 Halo NutriPeeps si pelajar dan pejuang hidup sehat!
-<div align="center">
+<img maskot_gizi_animated.gif width="220"/>
 
-Kenalin aku **NUTRI**, maskot ceria dari NutriMatch! 🥑✨
+Kenalin aku **Gizimo**, maskot ceria dari NutriMatch! 🥑✨
 
 Aku ada di sini buat bantu kalian cek kebutuhan gizi harian dengan cara yang:
 - gampang ✔  
@@ -15,20 +15,24 @@ Aku ada di sini buat bantu kalian cek kebutuhan gizi harian dengan cara yang:
 Yuk, bareng aku kita hitung AKG kamu pake metode keren: **Interpolasi Lagrange!**  
 Ayo hidup sehat tanpa ribet!
 
-### 🖼 Tampilan Aplikasi
+### 🖼 Klik Link di bawah ini ya
 <img width="1250" height="541" alt="image" src="https://github.com/user-attachments/assets/a1cbeb30-656c-4c69-8019-5ae3fbecbc1a" />
 
 👉 **[LANGSUNG COBAIN KALKULATOR AKG LAGRANGE DI SINI!]([https://bit.ly/3KILFZb](https://kalkulator-gizi-chaciwsfvtwi9xxvkz6tlj.streamlit.app/))** 👈
 
 ---
 
-## Kenapa Kalkulator Ini Spesial?
+## Kenapa sih NutriPeeps harus nyoba kalkulator ini?
 
-Kalkulator Gizi biasa seringkali hanya membulatkan kebutuhan Anda ke kategori usia atau berat badan terdekat. Kami tidak! Kami menggunakan ilmu pasti, yaitu **Metode Numerik Interpolasi Lagrange**, untuk memberikan estimasi yang benar-benar personal.
+Soalnya banyak kalkulator gizi di luar sana yang cuma ngegas ke angka bulat terdekat atau umurnya dibuletin, berat badan dibuletin.
+Padahal tubuh kita kan nggak hidup dari pembulatan💀
+
+Nah kalau di sini beda!
+Gizimo pakai ilmu pasti: Interpolasi Lagrange biar hasilnya bener-bener presisi, sesuai kamu, sesuai angka kamu, bukan angka tetangga ✨
 
 ### Otak di Balik Akurasi: Interpolasi Lagrange
 
-Kami membangun sebuah model matematika untuk mengisi celah antara data AKG standar (titik-titik rujukan).
+Gizimo membangun sebuah model matematika untuk mengisi celah antara data AKG standar (titik-titik rujukan).
 
 | Fitur | Manfaat untuk Anda |
 | :--- | :--- |
