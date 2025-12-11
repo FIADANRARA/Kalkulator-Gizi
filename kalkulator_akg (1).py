@@ -218,19 +218,19 @@ def get_saran_makanan(Jenis_Gizi_Key, hasil_estimasi, Unit_Gizi, BB_Awal, BB_Tar
     if BB_Target > BB_Awal + 0.5:
         Tujuan_Key = 'Saran_Naik'
         Tujuan_Goal = "Makan Lebih Banyak Kalori (Surplus) dari Kebutuhan Energi Harian."
-        Tujuan_Text = f"Anda bertujuan **MENAIKKAN** BB dari {BB_Awal:.1f} kg menjadi {BB_Target:.1f} kg."
+        Tujuan_Text = f"NutriPeeps bertujuan **MENAIKKAN** BB dari {BB_Awal:.1f} kg menjadi {BB_Target:.1f} kg."
     elif BB_Target < BB_Awal - 0.5:
         Tujuan_Key = 'Saran_Turun'
         Tujuan_Goal = "Makan Lebih Hemat Kalori (Defisit) dari Kebutuhan Energi Harian."
-        Tujuan_Text = f"Anda bertujuan **MENURUNKAN** BB dari {BB_Awal:.1f} kg menjadi {BB_Target:.1f} kg."
+        Tujuan_Text = f"NutriPeeps bertujuan **MENURUNKAN** BB dari {BB_Awal:.1f} kg menjadi {BB_Target:.1f} kg."
     else:
         Tujuan_Key = 'Saran_Jaga'
         Tujuan_Goal = "Jaga Kalori Tetap Stabil sesuai Kebutuhan Energi Harian."
-        Tujuan_Text = f"Anda bertujuan **MEMPERTAHANKAN** BB di sekitar {BB_Target:.1f} kg."
+        Tujuan_Text = f"NutriPeeps bertujuan **MEMPERTAHANKAN** BB di sekitar {BB_Target:.1f} kg."
         
     # --- BAGIAN 1: TARGET GIZI UTAMA & TUJUAN BB ---
     saran.append(f"### 🎯 Kebutuhan Harian **{Jenis_Gizi_Key}** (untuk BB Target {BB_Target:.1f} kg): {hasil_estimasi:.0f} {Unit_Gizi}")
-    saran.append(f"**Tujuan Besar Anda:** {Tujuan_Text}")
+    saran.append(f"**Tujuan Besar NutriPeeps:** {Tujuan_Text}")
     saran.append(f"**Strategi Utama Energi:** {Tujuan_Goal}")
     saran.append("---")
     
@@ -266,7 +266,7 @@ def get_saran_makanan(Jenis_Gizi_Key, hasil_estimasi, Unit_Gizi, BB_Awal, BB_Tar
     Air_Rujukan = Tabel_Kebutuhan_Air_Serat[st.session_state['kelompok']]['Air']
     Serat_Rujukan = Tabel_Kebutuhan_Air_Serat[st.session_state['kelompok']]['Serat']
     saran.append(f"**💧 Air:** Target **{Air_Rujukan} liter/hari**. Jangan tunggu haus untuk minum!")
-    saran.append(f"**🥦 Serat:** Target **{Serat_Rujukan} g/hari**. Pastikan ada sayur dan buah di setiap piring Anda.")
+    saran.append(f"**🥦 Serat:** Target **{Serat_Rujukan} g/hari**. Pastikan ada sayur dan buah di setiap piring NutriPeeps.")
     
     return saran
 
@@ -310,7 +310,7 @@ Tabel_Saran_Makro_Mikro = {
         'Saran_Jaga': {
             'Tingkatkan/Jaga': "Sumber protein yang beragam (daging, telur, ikan, tahu/tempe); Perhatikan porsi agar sesuai target AKG harian (misalnya, 1 porsi lauk setara telapak tangan).",
             'Kurangi/Batasi': "Protein yang datang bersamaan dengan lemak jenuh berlebih (misalnya: jeroan); Hindari protein yang diolah dengan cara digoreng atau menggunakan minyak berlebihan.",
-            'Contoh Praktis': "Variasikan sumber protein (ayam, ikan, telur, tempe); Coba olahan ikan/ayam dengan bumbu pepes atau tumis dengan sedikit minyak; Pastikan porsi protein cukup besar di piring Anda."
+            'Contoh Praktis': "Variasikan sumber protein (ayam, ikan, telur, tempe); Coba olahan ikan/ayam dengan bumbu pepes atau tumis dengan sedikit minyak; Pastikan porsi protein cukup besar di piring NutriPeeps."
         }
     },
     'Lemak Total': {
@@ -333,7 +333,7 @@ Tabel_Saran_Makro_Mikro = {
     'Karbohidrat': {
         'Saran_Naik': {
             'Tingkatkan/Jaga': "Karbohidrat kompleks dalam porsi yang lebih besar sebagai sumber energi utama untuk mencapai target kalori (misal, 1.5 porsi nasi per makan); Konsumsi Karbohidrat di sela waktu makan.",
-            'Kurangi/Batasi': "Mengganti nasi/roti dengan hanya sayuran yang berserat tinggi (ini akan membuat Anda cepat kenyang dan sulit menambah kalori); Jangan tinggalkan Karbohidrat saat makan utama.",
+            'Kurangi/Batasi': "Mengganti nasi/roti dengan hanya sayuran yang berserat tinggi (ini akan membuat NutriPeeps cepat kenyang dan sulit menambah kalori); Jangan tinggalkan Karbohidrat saat makan utama.",
             'Contoh Praktis': "Makan kentang, ubi, atau pasta sebagai sumber Karbohidrat selain nasi; Tambahkan 1 porsi roti di sarapan/camilan; Jangan mengurangi porsi nasi saat makan siang."
         },
         'Saran_Turun': {
@@ -343,7 +343,7 @@ Tabel_Saran_Makro_Mikro = {
         },
         'Saran_Jaga': {
             'Tingkatkan/Jaga': "Variasikan sumber Karbohidrat kompleks (nasi merah, oat, roti gandum utuh); Pastikan asupan Karbohidrat stabil dan tidak berlebihan (misal, 1 porsi nasi per makan).",
-            'Kurangi/Batasi': "Karbohidrat olahan dan gula tambahan; Batasi Karbohidrat dalam jumlah besar di malam hari (jika Anda tidak aktif setelah itu).",
+            'Kurangi/Batasi': "Karbohidrat olahan dan gula tambahan; Batasi Karbohidrat dalam jumlah besar di malam hari (jika NutriPeeps tidak aktif setelah itu).",
             'Contoh Praktis': "Pilih roti gandum utuh 100%; Selalu konsumsi serat (sayur/buah) bersamaan dengan Karbohidrat utama; Batasi *dessert* manis maksimal 1-2 kali seminggu."
         }
     },
@@ -351,7 +351,7 @@ Tabel_Saran_Makro_Mikro = {
         'Saran_Naik': {
             'Tingkatkan/Jaga': "Produk susu *full cream* (2 gelas per hari) atau *whole milk* untuk bonus kalori dan kalsium; Konsumsi sayuran hijau gelap.",
             'Kurangi/Batasi': "Minuman bersoda atau berkafein berlebih yang dapat mengganggu penyerapan kalsium.",
-            'Contoh Praktis': "Minum 2 gelas susu *full cream* per hari; Tambahkan keju parut ke dalam omelet/masakan Anda; Coba *yogurt* dengan madu dan buah."
+            'Contoh Praktis': "Minum 2 gelas susu *full cream* per hari; Tambahkan keju parut ke dalam omelet/masakan NutriPeeps; Coba *yogurt* dengan madu dan buah."
         },
         'Saran_Turun': {
             'Tingkatkan/Jaga': "Susu atau produk olahan rendah lemak/non-fat (1 gelas per hari) (tanpa gula); Sumber nabati Kalsium (tahu/tempe, brokoli).",
@@ -519,7 +519,7 @@ with tab_input:
             value=st.session_state['bb_awal'],
             step=0.1,
             format="%.1f",
-            help="BB Anda saat ini, digunakan untuk menghitung BMI.",
+            help="BB NutriPeeps saat ini, digunakan untuk menghitung BMI.",
             key='bb_awal'
         )
         
@@ -532,7 +532,7 @@ with tab_input:
             value=st.session_state['bb_target'],
             step=0.1,
             format="%.1f",
-            help="BB yang Anda targetkan. Estimasi AKG didasarkan pada BB ini.",
+            help="BB yang NutriPeeps targetkan. Estimasi AKG didasarkan pada BB ini.",
             key='bb_target'
         )
 
@@ -639,7 +639,7 @@ with tab_hasil:
             st.subheader(f"✅ HASIL ESTIMASI AKG: {Deskripsi_Gizi} ")
             
             # Tampilkan hasil estimasi dalam kotak SUCCESS 
-            st.success(f"Perkiraan kebutuhan **{Deskripsi_Gizi}** harian Anda untuk mencapai BB Target **{BB_Target_Val:.1f} kg** adalah **{hasil_estimasi:.2f} {Unit_Gizi}**.")
+            st.success(f"Perkiraan kebutuhan **{Deskripsi_Gizi}** harian NutriPeeps untuk mencapai BB Target **{BB_Target_Val:.1f} kg** adalah **{hasil_estimasi:.2f} {Unit_Gizi}**.")
 
             # Saran Makanan 
             st.subheader("💡 Saran Gizi, Makanan & Minuman Harian Dinamis")
@@ -674,7 +674,7 @@ with tab_hasil:
                 st.markdown("**Interpretasi Tabel Rujukan:**")
                 st.write(f"""
                 Tabel ini menunjukkan **pasangan data rujukan resmi AKG** (Angka Kecukupan Gizi) untuk kelompok usia **{Kelompok_Populasi_Key}**. 
-                * Estimasi Lagrange menggunakan data ini untuk memprediksi kebutuhan gizi pada BB Target Anda ({BB_Target_Val:.1f} kg).
+                * Estimasi Lagrange menggunakan data ini untuk memprediksi kebutuhan gizi pada BB Target NutriPeeps ({BB_Target_Val:.1f} kg).
                 """)
                 # --- AKHIR PENJELASAN TABEL ---
                 
@@ -714,9 +714,9 @@ with tab_hasil:
                 # --- PENJELASAN GRAFIK LEBIH SPESIFIK ---
                 st.markdown("**Interpretasi Kurva Lagrange:**")
                 st.write(f"""
-                1.  **Titik Merah (o)**: Kebutuhan gizi yang diekspektasikan pada **BB Awal** Anda ({BB_Awal_Val:.1f} kg).
-                2.  **Tanda X Biru Cerah (X)**: Kebutuhan gizi yang diperlukan pada **BB Target** Anda ({BB_Target_Val:.1f} kg).
-                3.  **Jarak antara kedua titik** menunjukkan perubahan nutrisi yang perlu Anda lakukan untuk mencapai BB Target.
+                1.  **Titik Merah (o)**: Kebutuhan gizi yang diekspektasikan pada **BB Awal** NutriPeeps ({BB_Awal_Val:.1f} kg).
+                2.  **Tanda X Biru Cerah (X)**: Kebutuhan gizi yang diperlukan pada **BB Target** NutriPeeps ({BB_Target_Val:.1f} kg).
+                3.  **Jarak antara kedua titik** menunjukkan perubahan nutrisi yang perlu NutriPeeps lakukan untuk mencapai BB Target.
                 """)
                 # --- AKHIR PENJELASAN GRAFIK ---
 
@@ -765,3 +765,4 @@ with tab_metode:
     st.markdown("""
     **Penting:** Meskipun metode ini sangat akurat di antara titik-titik data (interpolasi), metode ini mungkin kurang akurat jika digunakan untuk memprediksi di luar rentang data acuan (ekstrapolasi).
     """)
+
