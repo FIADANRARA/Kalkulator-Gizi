@@ -693,7 +693,7 @@ tab_input, tab_hasil, tab_metode = st.tabs(["1️⃣ Input Parameter", "2️⃣ 
 # --- TAB 1: Input Parameter ---
 with tab_input:
     with tab_input:
--    st.header("Masukkan Profil dan Kebutuhan")
+
 +    st.markdown("""
 +    <div class="section-header">
 +        <div class="section-header-icon">🧩</div>
@@ -974,6 +974,8 @@ with tab_hasil:
 # --- TAB 3: Tentang Metode (Tidak Berubah) ---
 with tab_metode:
     st.header("Metode Numerik: Interpolasi Polinomial Lagrange")
+st.subheader("Metode Numerik: Interpolasi Polinomial Lagrange")
+
     st.markdown("Aplikasi ini menggunakan metode **Interpolasi Polinomial Lagrange** untuk mengestimasi nilai Angka Kecukupan Gizi (AKG) pada Berat Badan (BB) yang tidak tercantum langsung dalam tabel rujukan AKG resmi.")
 
     st.subheader("Konsep Dasar")
@@ -1025,6 +1027,7 @@ with tab_metode:
 +    """, unsafe_allow_html=True)
 +
 +    st.subheader("Metode Numerik: Interpolasi Polinomial Lagrange")
+
 
 
 
