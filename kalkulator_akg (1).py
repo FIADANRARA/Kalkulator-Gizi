@@ -6,6 +6,31 @@ import streamlit as st
 # --- CSS KUSTOM & TEMA (TETAP SAMA) ---
 st.markdown("""
 <style>
+    st.markdown("""
+<style>
+    /* ... CSS kamu yang sudah ada ... */
+
+    /* TOMBOL: TRANSISI & ANIMASI HOVER / KLIK */
+    .stButton > button {
+        background-color: #00BFA6; 
+        color: #000000;
+        border: 2px solid #00BFA6;
+        transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background-color 0.12s ease-out;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .stButton > button:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.6);
+        background-color: #05d9bd;
+    }
+
+    .stButton > button:active {
+        transform: translateY(1px) scale(0.98);
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+        background-color: #00a890;
+    }
+
     /* 1. Latar Belakang Utama Aplikasi (Deep Navy) */
     .stApp {
         background-color: #0B2447; /* Biru Tua Sangat Pekat (Deep Navy) */
@@ -765,4 +790,5 @@ with tab_metode:
     st.markdown("""
     **Penting:** Meskipun metode ini sangat akurat di antara titik-titik data (interpolasi), metode ini mungkin kurang akurat jika digunakan untuk memprediksi di luar rentang data acuan (ekstrapolasi).
     """)
+
 
