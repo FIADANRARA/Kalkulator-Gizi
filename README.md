@@ -20,7 +20,14 @@ Ayo hidup sehat tanpa ribet!
 ### 🖼 Klik Link di bawah ini ya
 <img width="1250" height="541" alt="image" src="https://github.com/user-attachments/assets/a1cbeb30-656c-4c69-8019-5ae3fbecbc1a" />
 
-👉 **[LANGSUNG COBAIN KALKULATOR AKG LAGRANGE DI SINI!]([(https://kalkulator-gizi-chaciwsfvtwi9xxvkz6tlj.streamlit.app/)])** 👈
+**Klik di bawah ini!👇** <div align="center">
+
+<a href="https://kalkulator-gizi-chaciwsfvtwi9xxvkz6tlj.streamlit.app/" target="_blank">
+  <img src="https://img.shields.io/badge/OPEN%20NUTRIMATCH-Click%20Here!-ff69b4?style=for-the-badge&logo=streamlit&logoColor=white" />
+</a>
+
+</div>
+ 
 
 ---
 
