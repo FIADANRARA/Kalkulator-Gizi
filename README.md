@@ -4,7 +4,7 @@
 
 Halo NutriPeeps si pelajar dan pejuang hidup sehat!
 <div align="center">
-<img src="https://raw.githubusercontent.com/FIADANRARA/Kalkulator-Gizi/main/ang s.gif" width="220"/>
+<img src="https://raw.githubusercontent.com/FIADANRARA/Kalkulator-Gizi/main/Gizimo.gif" width="220"/>
 </div>
 
 Kenalin aku **Gizimo**, maskot ceria dari NutriMatch! 🥑✨
