@@ -36,7 +36,7 @@ Metode ini menggunakan Polinomial Lagrange P(x) untuk menentukan nilai gizi y be
 **1. Rumus Polinomial Lagrange:**
 
 
-![Rumus Polinomial Lagrange](assets/polinomial_lagrange.png)
+![Rumus Polinomial Lagrange](polinomial_lagrange.png)
 
 
 
