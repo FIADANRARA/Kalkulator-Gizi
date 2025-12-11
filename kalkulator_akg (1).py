@@ -605,10 +605,10 @@ with tab_input:
             st.error("Semua nilai Berat Badan dan Tinggi Badan harus lebih besar dari nol.")
         else:
             st.session_state['hitung'] = True
-                   st.info(f"Perhitungan {Jenis_Gizi_Key} Selesai! Silakan cek Tab 'Hasil Estimasi & Visualisasi'.")
-        st.markdown(
-            "<div class='pulse-info'>NutriPeeps siap lanjut ke Tab Hasil! ✨</div>",
-            unsafe_allow_html=True
+            st.info(f"Perhitungan {Jenis_Gizi_Key} Selesai! Silakan cek Tab 'Hasil Estimasi & Visualisasi'.")
+            st.markdown(
+               "<div class='pulse-info'>NutriPeeps siap lanjut ke Tab Hasil! ✨</div>",
+               unsafe_allow_html=True
         )
         st.balloons()
 
@@ -819,6 +819,7 @@ with tab_metode:
     st.markdown("""
     **Penting:** Meskipun metode ini sangat akurat di antara titik-titik data (interpolasi), metode ini mungkin kurang akurat jika digunakan untuk memprediksi di luar rentang data acuan (ekstrapolasi).
     """)
+
 
 
 
