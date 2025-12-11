@@ -6,7 +6,75 @@ import streamlit as st
 # --- CSS KUSTOM & TEMA (TETAP SAMA) ---
 st.markdown("""
 <style>
-   
+       /* FONT KHUSUS UNTUK JUDUL */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
+
+    /* HERO TITLE WRAPPER */
+    .hero-title-wrapper{
+        background: linear-gradient(120deg, #19376D 0%, #0B2447 40%, #43118D 100%);
+        border-radius: 20px;
+        padding: 20px 26px;
+        margin-bottom: 20px;
+        border: 1px solid #A5D7E8;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .hero-icon{
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+    }
+
+    .hero-text-main{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 800;
+        font-size: 1.8rem;
+        color: #FFB300;             /* kuning emas */
+        letter-spacing: 0.03em;
+    }
+
+    .hero-text-highlight{
+        color: #A5D7E8;             /* biru muda */
+    }
+
+    .hero-subtitle{
+        margin-top: 4px;
+        color: #F0F0F0;
+        font-size: 0.95rem;
+    }
+
+    .hero-pill{
+        margin-left: auto;
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: rgba(0, 191, 166, 0.15);
+        border: 1px solid #00BFA6;
+        font-size: 0.8rem;
+        color: #E8F9FD;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        white-space: nowrap;
+    }
+
+    @media (max-width: 768px){
+        .hero-title-wrapper{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .hero-pill{
+            margin-left: 0;
+            margin-top: 8px;
+        }
+    }
+
     /* ... CSS kamu yang sudah ada ... */
 
     /* TOMBOL: TRANSISI & ANIMASI HOVER / KLIK */
@@ -193,8 +261,24 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🧮NutriMatch : Kebutuhan Gizi yang Pas Buat Kamu🍳")
-st.markdown("💡Aplikasi ini menggunakan **Interpolasi Polinomial Lagrange** untuk mengestimasi Angka Kecukupan Gizi (AKG) berdasarkan **Berat Badan Target** dari data rujukan.")
+st.markdown("""
+<div class="hero-title-wrapper">
+    <div class="hero-icon">🍳</div>
+    <div>
+        <div class="hero-text-main">
+            NutriMatch <span class="hero-text-highlight">AKG Lagrange</span>
+        </div>
+        <div class="hero-subtitle">
+            Kebutuhan gizi harian NutriPeeps dihitung cerdas pakai interpolasi polinomial Lagrange —
+            rapi, visual, dan gampang dipahami.
+        </div>
+    </div>
+    <div class="hero-pill">
+        NutriPeeps • Beta
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
 st.markdown("---")
 
 # ----------------------------------------------------------------------
@@ -607,7 +691,7 @@ with tab_input:
             st.session_state['hitung'] = True
             st.info(f"Perhitungan {Jenis_Gizi_Key} Selesai! Silakan cek Tab 'Hasil Estimasi & Visualisasi'.")
             st.markdown(
-               "<div class='pulse-info'>NutriPeeps siap lanjut ke Tab Hasil! ✨</div>",
+               "<div class='pulse-info'>NutriPeeps bisa lanjut ke Tab Hasil! ✨</div>",
                unsafe_allow_html=True
         )
         st.balloons()
@@ -819,6 +903,7 @@ with tab_metode:
     st.markdown("""
     **Penting:** Meskipun metode ini sangat akurat di antara titik-titik data (interpolasi), metode ini mungkin kurang akurat jika digunakan untuk memprediksi di luar rentang data acuan (ekstrapolasi).
     """)
+
 
 
 
