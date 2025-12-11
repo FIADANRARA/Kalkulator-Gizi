@@ -688,23 +688,24 @@ if 'tb_val' not in st.session_state:
 
 
 # --- Buat Tab Interaktif ---
-tab_input, tab_hasil, tab_metode = st.tabs(["1️⃣ Input Parameter", "2️⃣ Hasil Estimasi & Visualisasi", "3️⃣ Tentang Metode"])
+tab_input, tab_hasil, tab_metode = st.tabs(
+    ["1️⃣ Input Parameter", "2️⃣ Hasil Estimasi & Visualisasi", "3️⃣ Tentang Metode"]
+)
 
 # --- TAB 1: Input Parameter ---
+with tab_input:
+    st.markdown("""
+    <div class="section-header">
+        <div class="section-header-icon">🧩</div>
+        <div>
+            <div class="section-header-title">Masukkan Profil dan Kebutuhan</div>
+            <div class="section-header-sub">
+                Isi dulu data dasar NutriPeeps supaya perhitungannya pas sasaran.
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
-+    st.markdown("""
-+    <div class="section-header">
-+        <div class="section-header-icon">🧩</div>
-+        <div>
-+            <div class="section-header-title">Masukkan Profil dan Kebutuhan</div>
-+            <div class="section-header-sub">
-+                Isi dulu data dasar NutriPeeps supaya perhitungannya pas sasaran.
-+            </div>
-+        </div>
-+    </div>
-+    """, unsafe_allow_html=True)
-
-    
     col_gizi, col_bb_awal, col_tb = st.columns(3)
     Kelompok_options = list(Tabel_Kebutuhan_Gizi_Rujukan.keys())
 
@@ -718,7 +719,9 @@ tab_input, tab_hasil, tab_metode = st.tabs(["1️⃣ Input Parameter", "2️⃣ 
         )
         
         # 2. Jenis Gizi 
-        Gizi_options = list(Tabel_Kebutuhan_Gizi_Rujukan[Kelompok_Populasi_Key]['Kebutuhan_Gizi'].keys())
+        Gizi_options = list(
+            Tabel_Kebutuhan_Gizi_Rujukan[Kelompok_Populasi_Key]['Kebutuhan_Gizi'].keys()
+        )
         Jenis_Gizi_Key = st.selectbox(
             '2. Jenis Kebutuhan Gizi:',
             Gizi_options,
@@ -731,7 +734,6 @@ tab_input, tab_hasil, tab_metode = st.tabs(["1️⃣ Input Parameter", "2️⃣ 
     col_bb_awal, col_bb_target, col_tb = st.columns(3)
 
     with col_bb_awal:
-        # 3. Berat Badan Awal (Untuk hitung BMI)
         BB_Awal_Val = st.number_input(
             '3. Berat Badan Awal Saat Ini (kg):',
             min_value=30.0,
@@ -744,7 +746,6 @@ tab_input, tab_hasil, tab_metode = st.tabs(["1️⃣ Input Parameter", "2️⃣ 
         )
         
     with col_bb_target:
-        # 4. Berat Badan Target (Untuk hitung AKG)
         BB_Target_Val = st.number_input(
             '4. Berat Badan Target Ideal (kg):',
             min_value=30.0,
@@ -757,7 +758,6 @@ tab_input, tab_hasil, tab_metode = st.tabs(["1️⃣ Input Parameter", "2️⃣ 
         )
 
     with col_tb:
-        # 5. Tinggi Badan
         TB_Val = st.number_input(
             '5. Tinggi Badan (cm):',
             min_value=100.0,
@@ -776,12 +776,17 @@ tab_input, tab_hasil, tab_metode = st.tabs(["1️⃣ Input Parameter", "2️⃣ 
             st.error("Semua nilai Berat Badan dan Tinggi Badan harus lebih besar dari nol.")
         else:
             st.session_state['hitung'] = True
-            st.info(f"Perhitungan {Jenis_Gizi_Key} Selesai! Silakan cek Tab 'Hasil Estimasi & Visualisasi'.")
+
+            st.info(
+                f"Perhitungan {Jenis_Gizi_Key} Selesai! Silakan cek Tab 'Hasil Estimasi & Visualisasi'."
+            )
+
             st.markdown(
-               "<div class='pulse-info'>NutriPeeps bisa lanjut ke Tab Hasil! ✨</div>",
-               unsafe_allow_html=True
-        )
-        st.balloons()
+                "<div class='pulse-info'>NutriPeeps siap lanjut ke Tab Hasil! ✨</div>",
+                unsafe_allow_html=True
+            )
+
+            st.balloons()
 
 with tab_hasil:
 -    if st.session_state['hitung']:
@@ -1025,6 +1030,7 @@ with tab_metode:
 +    """, unsafe_allow_html=True)
 +
 +    st.subheader("Metode Numerik: Interpolasi Polinomial Lagrange")
+
 
 
 
