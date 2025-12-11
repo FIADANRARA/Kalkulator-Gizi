@@ -1030,7 +1030,7 @@ with tab_metode:
     """)
 
 with tab_metode:
--    st.header("Metode Numerik: Interpolasi Polinomial Lagrange")
+    st.header("Metode Numerik: Interpolasi Polinomial Lagrange")
 +    st.markdown("""
 +    <div class="section-header">
 +        <div class="section-header-icon">🧠</div>
@@ -1044,6 +1044,7 @@ with tab_metode:
 +    """, unsafe_allow_html=True)
 +
 +    st.subheader("Metode Numerik: Interpolasi Polinomial Lagrange")
+
 
 
 
