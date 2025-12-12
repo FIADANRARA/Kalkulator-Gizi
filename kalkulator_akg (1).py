@@ -496,7 +496,12 @@ def get_saran_makanan(Jenis_Gizi_Key, hasil_estimasi, Unit_Gizi, BB_Awal, BB_Tar
     saran.append(f"### Contoh Praktis & Pelengkap Harian")
     
     # CONTOH PRAKTIS SPESIFIK
-    contoh_praktis = saran_data.get(Tujuan_Key, {}).get('Contoh Praktis', "Contoh makanan spesifik belum tersedia.")
+    contoh_praktis = saran_data.get(Tujuan_Key, {}).get('Contoh Praktis', "Contoh menu spesifiknya belum aku isi ya 😅"
+                                                        "Tapi aman banget kalau kamu pakai menu basic:;"
+                                                         "Nasi/ubi + lauk protein (telur/tempe/ayam) + sayur; "
+                                                        "Snack: buah + yogurt / kacang segenggam; "
+                                                        "Minum air putih cukup & batasi minuman manis"
+                                                           )
     saran.append(f"**🍽️ SUBSTITUSI / OPSI MENU YANG GAMPANG DICOBA:**")
     for item in contoh_praktis.split(';'):
         saran.append(f"* {item.strip()}")
@@ -1059,6 +1064,7 @@ with tab_metode:
     Meskipun metode ini sangat akurat di antara titik-titik data (interpolasi), metode ini mungkin kurang akurat 
     jika digunakan untuk memprediksi di luar rentang data acuan (ekstrapolasi).
     """)
+
 
 
 
