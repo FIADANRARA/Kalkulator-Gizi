@@ -464,7 +464,7 @@ def get_saran_makanan(Jenis_Gizi_Key, hasil_estimasi, Unit_Gizi, BB_Awal, BB_Tar
     # TINGKATKAN/JAGA
     tingkatkan_jaga = saran_data.get(Tujuan_Key, {}).get(
         'Tingkatkan/Jaga',
-        "Informasi strategi peningkatan belum tersedia."
+        "Jaga pola makan tetap konsisten; pilih makanan bergizi seimbang; tidur cukup & tetap aktif."
     )
     saran.append(
         "<div class='saran-section saran-section-up'>"
@@ -479,7 +479,7 @@ def get_saran_makanan(Jenis_Gizi_Key, hasil_estimasi, Unit_Gizi, BB_Awal, BB_Tar
     # KURANGI/BATASI
     kurangi_batasi = saran_data.get(Tujuan_Key, {}).get(
         'Kurangi/Batasi',
-        "Informasi strategi pembatasan belum tersedia."
+        "Kurangi gula/minuman manis; batasi gorengan; hindari makan berlebihan di malam hari."
     )
     saran.append(
         "<div class='saran-section saran-section-down'>"
@@ -1059,6 +1059,7 @@ with tab_metode:
     Meskipun metode ini sangat akurat di antara titik-titik data (interpolasi), metode ini mungkin kurang akurat 
     jika digunakan untuk memprediksi di luar rentang data acuan (ekstrapolasi).
     """)
+
 
 
 
