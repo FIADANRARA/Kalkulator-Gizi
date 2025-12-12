@@ -3,10 +3,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
 
-# --- CSS KUSTOM & TEMA (TETAP SAMA) ---
+# --- CSS KUSTOM & TEMA ---
 st.markdown("""
 <style>
-    /* SECTION HEADER KECIL (UNTUK SETIAP TAB) */
+    /* SECTION HEADER KECIL */
     .section-header {
         margin-top: 10px;
         margin-bottom: 18px;
@@ -435,13 +435,13 @@ def custom_metric(label, value, subtext):
     st.markdown(html_code, unsafe_allow_html=True)
 
 # ----------------------------------------------------------------------
-# FUNGSI SARAN MAKANAN DINAMIS (MEMASUKKAN TUJUAN BB - BAHASA SANTAI)
+# FUNGSI SARAN MAKANAN DINAMIS
 # ----------------------------------------------------------------------
 def get_saran_makanan(Jenis_Gizi_Key, hasil_estimasi, Unit_Gizi, BB_Awal, BB_Target):
     saran = []
     saran_data = Tabel_Saran_Makro_Mikro.get(Jenis_Gizi_Key, {})
     
-    # Menentukan Tujuan Berat Badan (Menggunakan Bahasa Santai)
+    # Menentukan Tujuan Berat Badan
     if BB_Target > BB_Awal + 0.5:
         Tujuan_Key = 'Saran_Naik'
         Tujuan_Goal = "Makan Lebih Banyak Kalori (Surplus) dari Kebutuhan Energi Harian."
@@ -516,7 +516,7 @@ def get_saran_makanan(Jenis_Gizi_Key, hasil_estimasi, Unit_Gizi, BB_Awal, BB_Tar
     return saran
 
 # ----------------------------------------------------------------------
-# BAGIAN 3: SUMBER DATA AKG RUJUKAN📊 & SARAN VARIATIF (BAHASA SANTAI)
+# BAGIAN 3: SUMBER DATA AKG RUJUKAN📊 & SARAN VARIATIF 
 # ----------------------------------------------------------------------
 Tabel_Kebutuhan_Air_Serat = {
     'Laki-laki (Remaja 10-20 th)': {'Air': 2.2, 'Serat': 32, 'unit_air': 'liter', 'unit_serat': 'g'},
@@ -527,7 +527,7 @@ Tabel_Kebutuhan_Air_Serat = {
     'Perempuan (Lansia 61-80+ th)': {'Air': 2.5, 'Serat': 25, 'unit_air': 'liter', 'unit_serat': 'g'},
 }
 
-# STRUKTUR SARAN MAKANAN BERDASARKAN TUJUAN BB (Naik, Turun, Jaga)
+# STRUKTUR SARAN MAKANAN BERDASARKAN TUJUAN BB 
 Tabel_Saran_Makro_Mikro = {
     'Energi': {
         'Saran_Naik': {
@@ -629,7 +629,7 @@ Tabel_Saran_Makro_Mikro = {
 }
 
 # ----------------------------------------------------------------------
-# BAGIAN 4: DATA AKG RUJUKAN (TETAP SAMA, DITAMPILKAN LAGI UNTUK KELENGKAPAN)
+# BAGIAN 4: DATA AKG RUJUKAN
 # ----------------------------------------------------------------------
 Tabel_Kebutuhan_Gizi_Rujukan = {
     'Laki-laki (Remaja 10-20 th)': {
@@ -919,7 +919,7 @@ with tab_hasil:
             # Saran Makanan 
             st.subheader("💡 Saran Gizi, Makanan & Minuman Harian Dinamis")
             
-            # Tentukan saran berdasarkan BB Awal dan BB Target (FUNGSI BARU BAHASA SANTAI)
+            # Tentukan saran berdasarkan BB Awal dan BB Target
             saran_list = get_saran_makanan(
                 Jenis_Gizi_Key, 
                 hasil_estimasi, 
@@ -945,7 +945,7 @@ with tab_hasil:
                 })
                 st.dataframe(df_data, use_container_width=True)
                 
-                # --- PENJELASAN TABEL LEBIH SPESIFIK ---
+                # --- PENJELASAN TABEL ---
                 st.markdown("**Interpretasi Tabel Rujukan:**")
                 st.write(f"""
                 Tabel ini menunjukkan **pasangan data rujukan resmi AKG** (Angka Kecukupan Gizi) untuk kelompok usia **{Kelompok_Populasi_Key}**. 
@@ -986,7 +986,7 @@ with tab_hasil:
                 
                 st.pyplot(fig)
                 
-                # --- PENJELASAN GRAFIK LEBIH SPESIFIK ---
+                # --- PENJELASAN GRAFIK ---
                 st.markdown("**Interpretasi Kurva Lagrange:**")
                 st.write(f"""
                 1.  **Titik Merah (o)**: Kebutuhan gizi yang diekspektasikan pada **BB Awal** NutriPeeps ({BB_Awal_Val:.1f} kg).
@@ -1064,6 +1064,7 @@ with tab_metode:
     Meskipun metode ini sangat akurat di antara titik-titik data (interpolasi), metode ini mungkin kurang akurat 
     jika digunakan untuk memprediksi di luar rentang data acuan (ekstrapolasi).
     """)
+
 
 
 
