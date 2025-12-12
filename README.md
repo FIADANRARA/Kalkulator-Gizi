@@ -18,7 +18,7 @@ Yuk, bareng aku kita hitung AKG kamu pake metode keren: **Interpolasi Lagrange!*
 Ayo hidup sehat tanpa ribet!
 
 ### 🖼 Klik Link di bawah ini ya
-<img width="1250" height="541" alt="image" src="https://github.com/user-attachments/assets/a1cbeb30-656c-4c69-8019-5ae3fbecbc1a" />
+<img width="960" height="428" alt="image" src="https://github.com/user-attachments/assets/9e829e1d-13f5-4b10-9a3d-2b9873958cb2" />
 
 **Klik di bawah ini!👇** 
 <div align="center">
